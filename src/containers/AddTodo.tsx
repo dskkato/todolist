@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addTodo } from '../actions'
+import { addTodo } from '../actions/actions'
 import { Dispatch } from 'redux';
 
 const AddTodo: React.FC<{ dispatch: Dispatch }> = ({ dispatch }) => {

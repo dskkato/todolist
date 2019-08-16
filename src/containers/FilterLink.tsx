@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
-import { setVisibilityFilter, VisibilityFilters } from '../actions'
+import { setVisibilityFilter, VisibilityFilters } from '../actions/actions'
 import Link from '../components/Link'
 import { Dispatch } from 'redux';
-import { RootState } from '../reducers';
+import { RootState } from '../reducers/reducers';
 
 type Props = {
   filter: VisibilityFilters
