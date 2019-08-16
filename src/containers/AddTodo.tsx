@@ -1,8 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
+import { Dispatch } from 'redux';
 
-let AddTodo = ({ dispatch }: any) => {
+const AddTodo: React.FC<{ dispatch: Dispatch }> = ({ dispatch }) => {
   let input: any
 
   return (

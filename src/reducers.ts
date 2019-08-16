@@ -6,15 +6,17 @@ import {
   VisibilityFilters
 } from './actions'
 
-type Todo = {
+export type Todo = {
   text: string,
   completed: boolean
 }
 
+export type Todos = Todo[]
+
 type TodoAction = {
   type: string,
-  text?: string,
-  index?: number
+  text: string,
+  index: number
 }
 
 type VisibilityAction = {
@@ -22,13 +24,18 @@ type VisibilityAction = {
   filter: VisibilityFilters,
 }
 
-function todos(state: Todo[] = [], action: TodoAction) {
+export type RootState = {
+  todos: Todos,
+  visibilityFilter: VisibilityFilters
+}
+
+function todos(state: Todos = [], action: TodoAction) {
   switch (action.type) {
     case ADD_TODO:
       return [
         ...state,
         {
-          text: action.text ? action.text : "", // 冗長な記述
+          text: action.text, 
           completed: false
         }
       ]
@@ -38,7 +45,7 @@ function todos(state: Todo[] = [], action: TodoAction) {
         if (index === action.index) {
           return {
             ...todo,
-            completed: todo.completed ? !todo.completed : true// 冗長な記述
+            completed: !todo.completed
           }
         }
         return todo

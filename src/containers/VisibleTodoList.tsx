@@ -2,18 +2,7 @@ import { connect } from 'react-redux'
 import { toggleTodo, VisibilityFilters } from '../actions'
 import TodoList from '../components/TodoList'
 import {Dispatch} from 'redux'
-
-type Todo = {
-  id: number,
-  completed: boolean,
-  text: string
-}
-type Todos = Todo[]
-
-type State = {
-  visibilityFilter: VisibilityFilters,
-  todos: Todo[]
-}
+import { RootState, Todos, Todo } from '../reducers';
 
 const getVisibleTodos = (todos: Todos, filter: VisibilityFilters) => {
   switch (filter) {
@@ -26,7 +15,7 @@ const getVisibleTodos = (todos: Todos, filter: VisibilityFilters) => {
   }
 }
 
-const mapStateToProps = (state: State) => {
+const mapStateToProps = (state: RootState) => {
   return {
     todos: getVisibleTodos(state.todos, state.visibilityFilter)
   }

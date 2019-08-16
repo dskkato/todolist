@@ -1,6 +1,6 @@
 import React from 'react'
 
-type Props = {
+export type Props = {
   active: boolean,
   children: React.ReactNode, // or JSX.Element
   onClick: () => void
