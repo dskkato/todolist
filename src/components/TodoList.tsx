@@ -2,22 +2,22 @@ import React from 'react'
 import Todo from './Todo'
 
 type Props = {
-  todos: {
-    completed: boolean,
-    text: string
+  readonly todos: {
+    readonly id:number
+    readonly completed: boolean,
+    readonly text: string,
   }[],
-  onTodoClick: (index: number) => void
+  readonly toggleTodo: (index: number) => void
 }
 
-const TodoList: React.FC<Props> = ({ todos, onTodoClick }) => {
+const TodoList: React.FC<Props> = ({ todos, toggleTodo }) => {
   return (
     <ul>
-      {todos.map((todo, index) => (
+      {todos.map((todo) => (
         <Todo
-          key={index}
-          completed={todo.completed}
-          text={todo.text}
-          onClick={() => onTodoClick(index)}
+          key={todo.id}
+          {...todo}
+          onClick={() => toggleTodo(todo.id)}
         />
       ))}
     </ul>

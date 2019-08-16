@@ -1,9 +1,9 @@
 import React from 'react'
 
 export type Props = {
-  active: boolean,
-  children: React.ReactNode, // or JSX.Element
-  onClick: () => void
+  readonly active: boolean,
+  readonly children: React.ReactNode, // or JSX.Element
+  readonly onClick: () => void
 }
 
 const Link: React.FC<Props> = ({ active, children, onClick }) => {
@@ -12,15 +12,15 @@ const Link: React.FC<Props> = ({ active, children, onClick }) => {
   }
 
   return (
-    <a
-      href=""
-      onClick={e => {
-        e.preventDefault()
-        onClick()
+    <button
+      onClick={onClick}
+      disabled={active}
+      style={{
+        marginLeft: '4px',
       }}
     >
       {children}
-    </a>
+    </button>
   )
 }
 

@@ -1,9 +1,10 @@
 import React from 'react'
 
 type Props = {
-  onClick: () => void,
-  completed: boolean,
-  text: string
+  readonly onClick: () => void,
+  readonly completed: boolean,
+  readonly id:number,
+  readonly text: string
 }
 
 const Todo: React.FC<Props> = ({ onClick, completed, text }) => {

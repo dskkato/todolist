@@ -1,7 +1,7 @@
 import React from 'react';
-import AddTodo from './AddTodo';
-import VisibleTodoList from './VisibleTodoList';
-import Footer from '../components/Footer';
+import Footer from './Footer';
+import AddTodo from '../containers/AddTodo';
+import VisibleTodoList from '../containers/VisibleTodoList';
 
 const App: React.FC = () => {
   return (
