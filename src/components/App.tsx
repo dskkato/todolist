@@ -2,6 +2,8 @@ import React from 'react';
 import Footer from './Footer';
 import AddTodo from '../containers/AddTodo';
 import VisibleTodoList from '../containers/VisibleTodoList';
+import BarChart from './BarChart';
+import Plotly from './Plotly';
 
 const App: React.FC = () => {
   return (
@@ -9,6 +11,8 @@ const App: React.FC = () => {
       <AddTodo />
       <VisibleTodoList />
       <Footer />
+      <BarChart />
+      <Plotly />
     </div>
   );
 }
